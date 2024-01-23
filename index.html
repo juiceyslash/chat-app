@@ -1,49 +1,75 @@
-<!-- HTML -->
-<div id="chat-container" style="max-width: 300px; margin: 0 auto; overflow-y: scroll; background-color: #1a1a1a; color: white; border-radius: 8px; padding: 15px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); font-family: Arial, sans-serif;">
-  <div id="chat-display" style="padding: 10px;"></div>
-  <input type="text" id="user-input" placeholder="Digite sua mensagem..." style="box-sizing: border-box; width: 100%; padding: 10px; border: 1px solid #333; border-radius: 5px; margin-top: 10px; background-color: #333; color: white;">
-  <button onclick="sendMessage()" style="box-sizing: border-box; width: 100%; padding: 10px; background-color: #4700FF; color: white; border: none; border-radius: 5px; margin-top: 10px; cursor: pointer;">Enviar</button>
-</div>
-
-<script>
-  // JavaScript
-  const chatDisplay = document.getElementById('chat-display');
-  const userInput = document.getElementById('user-input');
-
-  function sendMessage() {
-    const userMessage = userInput.value;
-    if (userMessage.trim() === '') {
-      return; // Não envie mensagens vazias
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sua Página de Aniversário</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
     }
 
-    displayMessage('user', userMessage);
+    p {
+      text-align: center;
+    }
 
-    // Lógica para processar a mensagem do usuário e gerar uma resposta
-    const response = generateResponse(userMessage);
-    displayMessage('participant', response);
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #3498db;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
 
-    // Limpar o campo de entrada do usuário
-    userInput.value = '';
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
-    // Rolar para a última mensagem
-    chatDisplay.scrollTop = chatDisplay.scrollHeight;
-  }
+    .small-image {
+      max-width: 50%; /* Ajuste a largura conforme necessário */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
 
-  function displayMessage(sender, message) {
-    const messageElement = document.createElement('div');
-    messageElement.classList.add(sender);
-    messageElement.style.fontFamily = 'Arial, sans-serif';
-    messageElement.textContent = message;
+  <script>
+    // Criando um elemento de parágrafo para o texto "Feliz Aniversário"
+    var paragrafo = document.createElement("p");
+    paragrafo.textContent = "🎈🎁🎉🍰Feliz Aniversário🍰🎉🎁🎈";
+    document.body.appendChild(paragrafo);
 
-    chatDisplay.appendChild(messageElement);
+    // Criando um elemento de imagem 1
+    var imagem1 = document.createElement("img");
+    imagem1.src = "https://fv5-3.failiem.lv/thumb.php?i=566e4ys4vk&v=1&n=Screenshot_20240122-222227.jpg";
+    document.body.appendChild(imagem1);
 
-    // Rolar para a última mensagem
-    chatDisplay.scrollTop = chatDisplay.scrollHeight;
-  }
+    // Criando um elemento de parágrafo para o texto "Número da sua"
+    var numeroParagrafo = document.createElement("p");
+    numeroParagrafo.textContent = "👇🙏Número da sua irmã🙏 👇";
+    document.body.appendChild(numeroParagrafo);
 
-  function generateResponse(userMessage) {
-    // Lógica para gerar uma resposta com base na mensagem do usuário
-    // Aqui você pode ajustar conforme necessário ou adicionar uma lógica mais complexa
-    return ''; // Mensagem vazia ou substituir por sua própria lógica
-  }
-</script>
+    // Criando um elemento de input para a caixa de texto
+    var caixaDeTexto = document.createElement("input");
+
+    // Definindo o tipo de input como texto
+    caixaDeTexto.type = "text";
+
+    // Adicionando a caixa de texto ao corpo do documento
+    document.body.appendChild(caixaDeTexto);
+
+    // Criando um elemento de imagem 2 (com classe para torná-la menor)
+    var imagem2 = document.createElement("img");
+    imagem2.src = "https://files.fm/thumb_video_picture.php?i=5fmuy7mfff";
+    imagem2.classList.add("small-image");
+    document.body.appendChild(imagem2);
+  </script>
+
+</body>
+</html>
